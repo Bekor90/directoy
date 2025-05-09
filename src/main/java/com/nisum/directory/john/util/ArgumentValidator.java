@@ -18,7 +18,7 @@ public class ArgumentValidator {
         if (Objects.isNull(phones) || phones.isEmpty()) {
             throw new RequiredValueException(message);
         }
-        if (phones.size() > 1) {
+        if (phones.size() > 0) {
             for(PhoneRequest phone : phones ){
                 validateString(phone.number(), message);
                 validateString(phone.citycode(), message);
