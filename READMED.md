@@ -20,6 +20,12 @@ Implementa registro de usuarios y seguridad con Spring, siguiendo el patrón **M
 
 ---
 
+## Visualizar request y response posterior a ejecución 
+## YAML
+http://localhost:8080/v3/api-docs.yaml
+## JSON
+http://localhost:8080/v3/api-docs
+
 ## 🚀️ Cómo ejecutar el proyecto
 
 ### 1. Clona el repositorio
