@@ -35,30 +35,29 @@ public class UserService {
     public UserResponse registerUser(UserRequest request) {
 
         validateUser(request);
-        UUID userId = UUID.randomUUID();
         String token = jwtService.generateToken(request.email());
         LocalDateTime now = LocalDateTime.now();
 
-        Users users = new Users();
-        users.setId(userId);
-        users.setName(request.name());
-        users.setEmail(request.email());
-        users.setPassword(request.password());
-        users.setCreated(now);
-        users.setModified(now);
-        users.setLastLogin(now);
-        users.setToken(token);
-        users.setActive(true);
+        Users users = Users.builder()
+                .id(UUID.randomUUID())
+                .name(request.name())
+                .email(request.email())
+                .password(request.password())
+                .created(now)
+                .modified(now)
+                .lastLogin(now)
+                .token(token)
+                .isActive(true)
+                .build();
 
-        List<Phone> phones = request.phones().stream().map(p -> {
-            Phone phone = new Phone();
-            phone.setNumber(p.number());
-            phone.setCitycode(p.citycode());
-            phone.setContrycode(p.contrycode());
-            phone.setUser(users);
-            return phone;
-        }).toList();
-
+        List<Phone> phones = request.phones().stream()
+                .map(p -> Phone.builder()
+                        .number(p.number())
+                        .citycode(p.citycode())
+                        .contrycode(p.contrycode())
+                        .users(users)
+                        .build())
+                .toList();
         users.setPhones(phones);
         userRepository.save(users);
 
