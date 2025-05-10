@@ -1,4 +1,4 @@
-package com.nisum.directory.john.exception;
+package com.nisum.directory.john.security.exception;
 
 public class RequiredValueException extends RuntimeException {
 

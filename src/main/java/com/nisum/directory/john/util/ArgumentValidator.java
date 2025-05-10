@@ -1,7 +1,7 @@
 package com.nisum.directory.john.util;
 
 import com.nisum.directory.john.dto.request.PhoneRequest;
-import com.nisum.directory.john.exception.RequiredValueException;
+import com.nisum.directory.john.security.exception.RequiredValueException;
 
 import java.util.List;
 import java.util.Objects;

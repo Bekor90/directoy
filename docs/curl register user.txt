@@ -1,0 +1,14 @@
+curl --location 'http://localhost:8080/api/users/register' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "name": "Olga Vanegas",
+  "email": "olga@dominio.cl",
+  "password": "Aola345",
+  "phones": [
+    {
+      "number": "1234567",
+      "citycode": "1",
+      "contrycode": "57"
+    }
+  ]
+}'

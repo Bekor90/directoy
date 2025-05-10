@@ -29,6 +29,7 @@ http://localhost:8080/v3/api-docs
 ## 🚀️ Cómo ejecutar el proyecto
 
 ### 1. Clona el repositorio
+### 2. importa curl en postman, directorio docs, abrir archivo copiar y pegar en postman
 
 ```bash
 git clone https://github.com/Bekor90/directoy.git
