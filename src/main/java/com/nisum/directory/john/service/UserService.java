@@ -34,7 +34,7 @@ public class UserService {
 
     public UserResponse registerUser(UserRequest request) {
 
-        validateUser(request);
+        validateFieldUser(request);
         String token = jwtService.generateToken(request.email());
         LocalDateTime now = LocalDateTime.now();
 
@@ -64,7 +64,7 @@ public class UserService {
         return new UserResponse(users.getId(), now, now, now, token, true);
     }
 
-    private void validateUser(UserRequest request) {
+    private void validateFieldUser(UserRequest request) {
 
         ArgumentValidator.validateFieldString(request.name(), MESSAGE_FIELD_INCOMPLETE);
         ArgumentValidator.validateFieldString(request.email(), MESSAGE_FIELD_INCOMPLETE);
