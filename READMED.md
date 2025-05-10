@@ -1,4 +1,4 @@
-# V1.0.1
+# V1.2.0
 # 📦 User API - Spring Boot 3  + H2
 
 Este proyecto es una API REST construida con **Java 17**, **Spring Boot 3**, **Maven** y base de datos **H2 en memoria**. 
